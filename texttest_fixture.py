@@ -16,7 +16,15 @@ if __name__ == "__main__":
              Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=5, quality=49),
              Item(name="Conjured Mana Cake", sell_in=3, quality=6),  # <-- :O
             ]
-    days = int(input("Wie viele tage?"))
+    while True:
+        try:
+            days = int(input("""Für wie viele Tage möchtest du das Inventar überprüfen?
+    > """))
+            break
+        except ValueError:
+            print("""
+Fehler, Bitte gib die Anzahl an Tagen als Zahl ein!
+""")
     import sys
     if len(sys.argv) > 1:
         days = int(sys.argv[1]) + 1
