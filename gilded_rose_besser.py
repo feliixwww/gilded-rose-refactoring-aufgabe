@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 class GildedRose(object):
 
@@ -8,7 +7,8 @@ class GildedRose(object):
     def update_quality(self):
         for item in self.items:
 
-            if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert" and item.name != "Conjured Mana Cake" and item.name != "Sulfuras, Hand of Ragnaros":
+            if (item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert" and item.name !=
+                    "Conjured Mana Cake" and item.name != "Sulfuras, Hand of Ragnaros"):
                 if item.quality > 0:
                     item.quality = item.quality - 1
                     if item.sell_in <= 0:
@@ -21,10 +21,10 @@ class GildedRose(object):
 
             if item.name == "Backstage passes to a TAFKAL80ETC concert" and item.quality < 50:
                 item.quality = item.quality + 1
-                if item.sell_in < 11 and item.sell_in >= 0:
+                if 11 > item.sell_in >= 0:
                     if item.quality < 50:
                         item.quality = item.quality + 1
-                if item.sell_in < 6 and item.sell_in >= 0:
+                if 6 > item.sell_in >= 0:
                     if item.quality < 50:
                         item.quality = item.quality + 1
 
